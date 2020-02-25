@@ -6,6 +6,7 @@ var request = require('./modules/request');
 console.log(log.timeStamp() + " service starting...");
 
 var everyHour = schedule.scheduleJob('5 */1 * * *', function () {
+    console.log(log.timeStamp() + ' sending eval...');
     request.get('/evaluationnotification', (err,result) => {
         if(err) return console.error(log.timeStamp() + ' err:', err);
         console.log(log.timeStamp() + ' eval:', result);
@@ -13,6 +14,7 @@ var everyHour = schedule.scheduleJob('5 */1 * * *', function () {
 });
 
 var everyTwenty = schedule.scheduleJob('*/20 * * * *', function () {
+    console.log(log.timeStamp() + ' sending lucky...');
     request.get('/testapi/luckynumber', (err,result) => {
         if(err) return console.error(log.timeStamp() + ' err:', err);
         console.log(log.timeStamp() + ' lucky:', result);
