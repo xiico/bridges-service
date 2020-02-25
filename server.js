@@ -20,7 +20,7 @@ var everyTwenty = schedule.scheduleJob('*/20 * * * *', function () {
 });
 
 var everyDay1 = schedule.scheduleJob('0 8 * * *', function () {
-    console.log(log.timeStamp() + ' reminder:', result);
+    console.log(log.timeStamp() + ' reminder:', "TO DO");
 });
 
 // var everySixHour = schedule.scheduleJob('5 */6 * * *', function () {
