@@ -1,11 +1,11 @@
-var https;// = require('https');
-var http = require('http');
+var https = require('https');
+var http;// = require('http');
 module.exports = {
     get: function (path, callBack) {
         (https || http).get({
             host: process.env.HOST_URL,
             path: path,
-            port: 3000,
+            // port: 3000,
             headers: { 'authorization': `Bearer ${process.env.SERVER_KEY}` }        
         }, function (res) {
             // explicitly treat incoming data as utf8 (avoids issues with multi-byte chars)
