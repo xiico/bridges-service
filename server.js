@@ -1,3 +1,4 @@
+'use strict';
 var  schedule  =  require('node-schedule');
 require('dotenv').config({ path: __dirname + '/.env' });
 var log = require('./modules/log');
