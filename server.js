@@ -22,7 +22,11 @@ var everyTwenty = schedule.scheduleJob('*/20 * * * *', function () {
 });
 
 var everyDay1 = schedule.scheduleJob('0 8 * * *', function () {
-    console.log(log.timeStamp() + ' reminder:', "TO DO");
+    console.log(log.timeStamp() + ' createpayments...');
+    request.get('/paymentapi/createpayments', (err,result) => {
+        if(err) return console.error(log.timeStamp() + ' err:', err);
+        console.log(log.timeStamp() + ' createpayments:', result);
+    });
 });
 
 // var everySixHour = schedule.scheduleJob('5 */6 * * *', function () {
