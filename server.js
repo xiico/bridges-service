@@ -30,6 +30,14 @@ var everyDay1 = schedule.scheduleJob('0 6 * * *', function () {
     });
 });
 
+var everyDay2 = schedule.scheduleJob('0 8 * * *', function () {
+    console.log(log.timeStamp() + ' onceaday...');
+    request.get('/automationapi/onceaday', (err,result) => {
+        if(err) return console.error(log.timeStamp() + ' err:', err);
+        console.log(log.timeStamp() + ' onceaday:', result);
+    });
+});
+
 // var everySixHour = schedule.scheduleJob('5 */6 * * *', function () {
 //     db.clanUpdate();
 // });
